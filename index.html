@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PugadPOD — Coming Soon</title>
+
+  <meta
+    name="description"
+    content="PugadPOD is a Philippines-first print-on-demand platform built for local creators."
+  />
+
+  <style>
+    :root {
+      --navy: #1C2541;
+      --gold: #E1B24C;
+      --text: #ffffff;
+      --muted: rgba(255,255,255,0.75);
+      --card: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at top right, #2b356a, var(--navy));
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      max-width: 720px;
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 32px;
+      backdrop-filter: blur(6px);
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: .4px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin: 0 0 12px;
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-gold {
+      color: var(--gold);
+    }
+
+    p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    form {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    input[type="email"] {
+      flex: 1;
+      min-width: 220px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,0.25);
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    input::placeholder {
+      color: rgba(255,255,255,0.55);
+    }
+
+    button {
+      padding: 12px 18px;
+      border-radius: 10px;
+      border: none;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      filter: brightness(1.05);
+    }
+
+    footer {
+      margin-top: 24px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <span class="badge">COMING SOON</span>
+
+    <!-- Brand text exactly matching your app -->
+    <h1>
+      Pugad<span class="brand-gold">POD</span>
+    </h1>
+
+    <p>
+      A Philippines-first print-on-demand platform built for local creators.
+    </p>
+
+    <p>
+      We’re getting ready. Want to be notified when we launch?
+    </p>
+
+    <!-- Mailchimp hosted signup -->
+    <form
+      action="https://eepurl.com/jvvc5o"
+      method="get"
+      target="_blank"
+    >
+      <input
+        type="email"
+        name="EMAIL"
+        placeholder="you@example.com"
+        required
+      />
+      <button type="submit">
+        Notify me
+      </button>
+    </form>
+
+    <footer>
+      © <span id="year"></span> PugadPOD
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
