@@ -90,7 +90,7 @@
       font-size: 16px;
     }
 
-    /* --- Mailchimp form, styled to match your UI --- */
+    /* --- Mailchimp form --- */
     .form {
       display: flex;
       gap: 10px;
@@ -137,15 +137,51 @@
       color: rgba(255,255,255,0.6);
     }
 
+    /* --- Enhanced Success Message Styling --- */
     .status {
       display: none;
-      margin-top: 14px;
-      padding: 10px 12px;
+      margin-top: 18px;
+      padding: 20px;
       border-radius: 12px;
       background: var(--successBg);
       border: 1px solid var(--successBorder);
       color: rgba(255,255,255,0.9);
+    }
+
+    .status-title {
+      display: block;
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .status-text {
       font-size: 14px;
+      margin-bottom: 16px;
+      opacity: 0.9;
+    }
+
+    .btn-survey {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: 900;
+      font-size: 14px;
+      margin-bottom: 8px;
+      transition: filter 0.2s;
+    }
+
+    .btn-survey:hover {
+      filter: brightness(1.05);
+    }
+
+    .helper-text {
+      display: block;
+      font-size: 11px;
+      color: rgba(255,255,255,0.6);
     }
 
     footer {
@@ -203,7 +239,14 @@
     </form>
 
     <div class="status" id="statusBox">
-      Salamat! You’re on the list. We’ll email you when PugadPOD launches.
+      <span class="status-title">Salamat! You’re on the list. We’ll email you when PugadPOD launches.</span>
+      <div class="status-text">Quick question (30 seconds): are you a creator, seller, or printing partner?</div>
+      
+      <a href="https://forms.gle/AxjVcSCFUBuHYc8n7" target="_blank" rel="noopener" class="btn-survey">
+        Tell us what you are
+      </a>
+      
+      <span class="helper-text">This helps us build the right features first.</span>
     </div>
 
     <div class="fineprint">
@@ -218,18 +261,15 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Show a friendly confirmation without sending users to a Mailchimp page.
     const form = document.getElementById("mc-embedded-subscribe-form");
     const statusBox = document.getElementById("statusBox");
 
     form.addEventListener("submit", function () {
-      // Basic client-side check (Mailchimp still validates server-side)
       const email = document.getElementById("mce-EMAIL").value.trim();
       if (!email) return;
 
       statusBox.style.display = "block";
 
-      // Optional: clear input after submit
       setTimeout(() => {
         document.getElementById("mce-EMAIL").value = "";
       }, 300);
