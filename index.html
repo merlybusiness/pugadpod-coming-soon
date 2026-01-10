@@ -12,6 +12,7 @@
             --gray-100: #f3f4f6;
             --gray-200: #e5e7eb;
             --gray-400: #9ca3af;
+            --gray-500: #6b7280;
             --gray-50: #F9FAFB;
             --success-bg: #223a41; 
             --success-border: #2e4d56;
@@ -19,27 +20,19 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        /* Universal Clickability Restriction */
-        * { pointer-events: none; }
-        input#mce-EMAIL, 
-        input#mc-embedded-subscribe, 
-        a#survey-btn, 
-        a.fb-link { 
-            pointer-events: auto !important; 
-        }
-
         body { 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             color: var(--navy);
             line-height: 1.5;
             background-color: var(--white);
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
         
-        /* BRAND LOGO STYLE - Medium Bold */
-        .brand-logo { color: white; font-weight: 600; letter-spacing: -0.5px; }
+        /* BRAND LOGO STYLE */
+        .brand-logo { color: white; font-weight: 600; letter-spacing: -0.5px; text-decoration: none; }
         .brand-logo span { color: var(--gold); }
 
         /* STICKY HEADER */
@@ -48,18 +41,18 @@
             top: 0;
             z-index: 1000;
             background-color: var(--navy); 
-            padding: 20px 0; 
+            padding: 16px 0; 
             border-bottom: 1px solid rgba(255,255,255,0.06); 
         }
         .header-content { display: flex; justify-content: space-between; align-items: center; }
-        .header-logo { font-size: 32px; }
+        .header-logo { font-size: 24px; }
         .header-badge { 
             border: 1px solid var(--gold);
             background-color: transparent;
             color: var(--gold);
-            font-weight: 900; 
-            font-size: 13px; 
-            padding: 6px 14px; 
+            font-weight: 800; 
+            font-size: 11px; 
+            padding: 4px 10px; 
             border-radius: 4px; 
             text-transform: uppercase;
         }
@@ -68,34 +61,34 @@
         .hero {
             background-color: var(--navy);
             color: var(--white);
-            padding: 0 0 100px; 
+            padding: 40px 0 80px; 
         }
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr 1.15fr; 
-            gap: 60px;
+            grid-template-columns: 1fr; 
+            gap: 40px;
             align-items: center;
         }
 
         /* Hero Left */
         h1.main-heading {
-            margin-top: 60px; 
-            font-size: 38px; 
-            font-weight: 500; 
+            font-size: 32px; 
+            font-weight: 600; 
             line-height: 1.2;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             letter-spacing: -0.5px;
         }
         .hero-desc {
-            font-size: 18px;
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 32px;
-            max-width: 450px;
+            font-size: 17px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 30px;
+            max-width: 500px;
         }
         .usp-row {
             display: flex;
-            gap: 20px;
-            font-size: 14px;
+            flex-wrap: wrap;
+            gap: 12px 20px;
+            font-size: 13px;
             font-weight: 600;
             color: rgba(255,255,255,0.4);
             margin-bottom: 30px;
@@ -106,46 +99,45 @@
             font-size: 11px;
             font-weight: 800;
             color: rgba(255,255,255,0.3);
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
         }
-        .profit-text-example .values { color: var(--gold); margin-left: 8px; font-weight: 700; }
+        .profit-text-example .values { color: var(--gold); margin-left: 4px; font-weight: 700; }
 
         /* Hero Right: Signup Card */
         .signup-card {
             background: rgba(255,255,255,0.04);
             border: 1px solid var(--gold); 
             border-radius: 20px;
-            padding: 50px;
-            margin-top: 40px;
+            padding: 30px;
             transition: opacity 0.3s ease;
         }
-        .signup-card .logo-large { font-size: 38px; margin-bottom: 12px; display: block; }
-        .signup-card p { font-size: 16px; color: rgba(255,255,255,0.7); margin-bottom: 24px; }
+        .signup-card .logo-large { font-size: 32px; margin-bottom: 12px; display: block; }
+        .signup-card p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 24px; }
         
-        .mc-form-row { display: flex; gap: 10px; margin-bottom: 15px; }
+        .mc-form-row { display: flex; flex-direction: column; gap: 12px; margin-bottom: 15px; }
         .mc-form-row input[type="email"] {
-            flex: 1;
+            width: 100%;
             background: rgba(0,0,0,0.3);
             border: 1px solid rgba(255,255,255,0.1);
             padding: 14px 18px;
             border-radius: 8px;
             color: white;
             outline: none;
-            font-size: 15px;
+            font-size: 16px; /* Prevents iOS auto-zoom */
         }
         .mc-form-row input[type="submit"] {
             background-color: var(--gold);
             color: var(--navy);
             border: none;
-            padding: 0 24px;
+            padding: 14px 24px;
             border-radius: 8px;
             font-weight: 900;
             font-size: 14px;
-            cursor: pointer !important;
+            cursor: pointer;
             transition: all 0.2s ease;
         }
-        .mc-form-row input[type="submit"]:disabled { opacity: 0.6; cursor: wait !important; }
+        .mc-form-row input[type="submit"]:active { transform: scale(0.98); }
 
         .fineprint { font-size: 11px; color: rgba(255,255,255,0.3); margin-bottom: 15px; line-height: 1.4; }
         .copyright-year { font-size: 11px; color: rgba(255,255,255,0.2); }
@@ -156,9 +148,8 @@
             background-color: var(--success-bg);
             border: 1px solid var(--success-border);
             border-radius: 16px;
-            padding: 35px;
+            padding: 30px;
             text-align: left; 
-            margin-top: 40px;
             animation: slideIn 0.4s ease-out;
         }
         @keyframes slideIn {
@@ -177,73 +168,94 @@
             font-size: 15px;
             text-decoration: none;
             margin-bottom: 15px;
-            cursor: pointer !important;
+            text-align: center;
+            width: 100%;
         }
         .survey-helper { display: block; color: rgba(255,255,255,0.4); font-size: 11px; }
 
         /* SECTIONS */
-        section { padding: 100px 0; }
+        section { padding: 60px 0; }
         .bg-gray { background-color: #F9FAFB; }
-        h2.sec-title { font-size: 34px; font-weight: 800; text-align: center; margin-bottom: 50px; color: var(--navy); }
+        h2.sec-title { font-size: 28px; font-weight: 800; text-align: center; margin-bottom: 40px; color: var(--navy); padding: 0 10px; }
 
         /* Built For Sellers */
-        .aud-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-        .aud-card { background: white; border: 1px solid var(--gray-100); padding: 35px; border-radius: 16px; }
+        .aud-grid { 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            gap: 16px; 
+        }
+        .aud-card { background: white; border: 1px solid var(--gray-200); padding: 24px; border-radius: 16px; }
         .aud-card svg { stroke: var(--gold) !important; }
-        .aud-card .icon { margin-bottom: 20px; display: block; }
-        .aud-card h3 { font-size: 19px; margin-bottom: 12px; }
-        .aud-card p { font-size: 14px; color: var(--gray-500); line-height: 1.6; }
+        .aud-card .icon { margin-bottom: 16px; display: block; }
+        .aud-card h3 { font-size: 18px; margin-bottom: 8px; }
+        .aud-card p { font-size: 14px; color: var(--gray-500); line-height: 1.5; }
 
         /* Comparison Section */
-        .comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .comp-card { padding: 45px; border-radius: 20px; }
-        .comp-card.light { background: white; border: 1px solid var(--gray-100); }
+        .comp-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        .comp-card { padding: 30px; border-radius: 20px; }
+        .comp-card.light { background: white; border: 1px solid var(--gray-200); }
         .comp-card.dark { background: var(--navy); color: white; border: 2px solid var(--gold); }
-        .comp-card h4 { font-size: 20px; font-weight: 800; margin-bottom: 24px; }
+        .comp-card h4 { font-size: 18px; font-weight: 800; margin-bottom: 20px; }
         .comp-list { list-style: none; }
-        .comp-list li { margin-bottom: 15px; font-size: 15px; display: flex; align-items: center; gap: 12px; }
-        .comp-list .x { color: var(--gray-400); }
+        .comp-list li { margin-bottom: 12px; font-size: 14px; display: flex; align-items: center; gap: 10px; }
+        .comp-list .x { color: var(--gray-400); font-weight: bold; }
         .comp-list .check { color: var(--gold); font-weight: bold; }
 
         /* Catalogue */
-        .cat-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 15px; }
-        .cat-card { background: white; border: 1px solid var(--gray-200); border-radius: 12px; padding: 15px; text-align: center; }
+        .cat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .cat-card { background: white; border: 1px solid var(--gray-200); border-radius: 12px; padding: 12px; text-align: center; }
         .cat-card img { width: 100%; aspect-ratio: 1; object-fit: contain; margin-bottom: 10px; background: var(--gray-50); border-radius: 8px; }
-        .cat-card h4 { font-size: 14px; font-weight: 700; }
+        .cat-card h4 { font-size: 13px; font-weight: 700; }
 
         /* Partner Content */
         .partner-box { text-align: center; max-width: 800px; margin: 0 auto; }
-        .partner-box p { font-size: 20px; color: var(--gray-500); }
+        .partner-box p { font-size: 18px; color: var(--gray-500); }
 
         /* Final CTA */
-        .cta-box { background: var(--navy); color: white; border-radius: 30px; padding: 80px 40px; text-align: center; border: 1px solid rgba(255,255,255,0.1); }
-        .cta-box h2 { font-size: 40px; font-weight: 900; margin-bottom: 16px; }
-        .cta-box p { font-size: 20px; opacity: 0.7; }
+        .cta-box { background: var(--navy); color: white; border-radius: 24px; padding: 60px 24px; text-align: center; border: 1px solid rgba(255,255,255,0.1); }
+        .cta-box h2 { font-size: 32px; font-weight: 900; margin-bottom: 16px; line-height: 1.1; }
+        .cta-box p { font-size: 18px; opacity: 0.7; }
 
         /* FOOTER */
-        footer { background-color: var(--navy); color: white; padding: 60px 0 25px; }
-        .footer-top { margin-bottom: 60px; }
-        .footer-desc { font-size: 15px; opacity: 0.5; max-width: 350px; line-height: 1.6; }
-        .fb-link { cursor: pointer !important; display: inline-block; transition: opacity 0.2s; }
+        footer { background-color: var(--navy); color: white; padding: 50px 0 25px; }
+        .footer-top { margin-bottom: 40px; }
+        .footer-desc { font-size: 14px; opacity: 0.5; max-width: 350px; line-height: 1.6; }
+        .fb-link { display: inline-block; margin-top: 20px; }
         .fb-link svg { fill: white; width: 24px; height: 24px; opacity: 0.8; }
         
         .footer-bottom { 
             border-top: 1px solid rgba(255,255,255,0.06); 
             padding-top: 25px; 
             display: flex; 
-            justify-content: space-between; 
-            font-size: 13px; 
+            flex-direction: column;
+            gap: 12px;
+            font-size: 12px; 
             color: rgba(255,255,255,0.4); 
+            text-align: center;
         }
 
-        @media (max-width: 1024px) {
-            .hero-grid { grid-template-columns: 1fr; }
-            .hero-left { text-align: center; }
-            .hero-desc, .usp-row { margin: 0 auto 24px; justify-content: center; }
-            .signup-card { margin: 0 auto; padding: 35px; }
-            .cat-grid { grid-template-columns: repeat(3, 1fr); }
+        /* DESKTOP RESPONSIVENESS */
+        @media (min-width: 768px) {
+            .hero { padding: 80px 0 120px; }
+            .hero-grid { grid-template-columns: 1fr 1fr; gap: 60px; }
+            h1.main-heading { font-size: 42px; }
+            .signup-card { padding: 40px; }
+            .mc-form-row { flex-direction: row; }
+            .mc-form-row input[type="submit"] { width: auto; }
+            #survey-btn { width: auto; }
+
             .aud-grid { grid-template-columns: repeat(2, 1fr); }
-            .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+            .cat-grid { grid-template-columns: repeat(3, 1fr); }
+            .comp-grid { grid-template-columns: 1fr 1fr; }
+            
+            h2.sec-title { font-size: 36px; }
+            .footer-bottom { flex-direction: row; justify-content: space-between; text-align: left; }
+        }
+
+        @media (min-width: 1024px) {
+            .aud-grid { grid-template-columns: repeat(4, 1fr); }
+            .cat-grid { grid-template-columns: repeat(6, 1fr); }
+            .hero-grid { grid-template-columns: 1fr 1.15fr; }
         }
     </style>
 </head>
@@ -251,7 +263,7 @@
 
     <header>
         <div class="container header-content">
-            <div class="header-logo brand-logo">Pugad<span>POD</span></div>
+            <a href="#" class="header-logo brand-logo">Pugad<span>POD</span></a>
             <div class="header-badge">Coming Soon</div>
         </div>
     </header>
@@ -278,7 +290,6 @@
                         <span class="logo-large brand-logo">Pugad<span>POD</span></span>
                         <p>We’re getting ready. Want to be notified when we launch?</p>
                         
-                        <!-- AJAX FORM SETUP -->
                         <form id="mc-embedded-subscribe-form" novalidate>
                             <div class="mc-form-row">
                                 <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="you@example.com" required>
@@ -288,22 +299,21 @@
                             <div style="display:none;" id="mce-responses">
                                 <div class="response" id="mce-error-response"></div>
                             </div>
-                            <!-- Bot Trap -->
                             <div style="position: absolute; left: -5000px;" aria-hidden="true">
                                 <input type="text" name="b_ffa4d13140e8df6cff33aab65_328d609f7b" tabindex="-1" value="">
                             </div>
                         </form>
 
-                        <div class="fineprint">By subscribing, you agree to receive occasional updates from PugadPOD. You can unsubscribe anytime.</div>
+                        <div class="fineprint">By subscribing, you agree to receive occasional updates. Unsubscribe anytime.</div>
                         <div class="copyright-year">© 2026 PugadPOD</div>
                     </div>
                 </div>
 
                 <div id="survey-panel">
-                    <h2 class="survey-title">Salamat po! You’re on the list. We’ll email you when PugadPOD launches.</h2>
+                    <h2 class="survey-title">Salamat po! You’re on the list.</h2>
                     <p class="survey-subtitle">Quick question (30 seconds): are you a creator, seller, or printing partner?</p>
                     <a href="https://forms.gle/AxjVcSCFUBuHYc8n7" target="_blank" id="survey-btn">Answer the quick form</a>
-                    <span class="survey-helper">Early sign-ups may be invited to get access when PugadPOD launches.</span>
+                    <span class="survey-helper">Early sign-ups get priority access at launch.</span>
                 </div>
             </div>
         </div>
@@ -347,12 +357,12 @@
         <div class="container">
             <h2 class="sec-title">Our Catalogue</h2>
             <div class="cat-grid">
-                <div class="cat-card"><img src="assets/landing/catalog/tshirts.png" alt=""><h4>T-Shirts</h4></div>
-                <div class="cat-card"><img src="assets/landing/catalog/hoodies.png" alt=""><h4>Hoodies</h4></div>
-                <div class="cat-card"><img src="assets/landing/catalog/tote-bags.png" alt=""><h4>Tote Bags</h4></div>
-                <div class="cat-card"><img src="assets/landing/catalog/mugs.png" alt=""><h4>Mugs</h4></div>
-                <div class="cat-card"><img src="assets/landing/catalog/stickers.png" alt=""><h4>Stickers</h4></div>
-                <div class="cat-card"><img src="assets/landing/catalog/posters.png" alt=""><h4>Posters</h4></div>
+                <div class="cat-card"><img src="assets/landing/catalog/tshirts.png" alt="T-Shirts"><h4>T-Shirts</h4></div>
+                <div class="cat-card"><img src="assets/landing/catalog/hoodies.png" alt="Hoodies"><h4>Hoodies</h4></div>
+                <div class="cat-card"><img src="assets/landing/catalog/tote-bags.png" alt="Tote Bags"><h4>Tote Bags</h4></div>
+                <div class="cat-card"><img src="assets/landing/catalog/mugs.png" alt="Mugs"><h4>Mugs</h4></div>
+                <div class="cat-card"><img src="assets/landing/catalog/stickers.png" alt="Stickers"><h4>Stickers</h4></div>
+                <div class="cat-card"><img src="assets/landing/catalog/posters.png" alt="Posters"><h4>Posters</h4></div>
             </div>
         </div>
     </section>
@@ -369,8 +379,8 @@
                         <li><span class="x">✕</span> High dollar shipping fees</li>
                     </ul>
                 </div>
-                <div class="comp-card dark shadow-2xl">
-                    <h4 class="text-gold">PugadPOD</h4>
+                <div class="comp-card dark">
+                    <h4 style="color: var(--gold)">PugadPOD</h4>
                     <ul class="comp-list">
                         <li><span class="check">✓</span> Local Philippine Production</li>
                         <li><span class="check">✓</span> 3-5 day shipping</li>
@@ -404,17 +414,15 @@
     <footer>
         <div class="container">
             <div class="footer-top">
-                <div class="brand-logo" style="font-size: 32px; margin-bottom: 15px;">Pugad<span>POD</span></div>
+                <div class="brand-logo" style="font-size: 28px; margin-bottom: 15px;">Pugad<span>POD</span></div>
                 <p class="footer-desc">The modern print-on-demand infrastructure built for the Philippines.</p>
-                <div style="margin-top: 25px;">
-                    <a href="https://www.facebook.com/PugadPOD/" class="fb-link" target="_blank" rel="noopener noreferrer">
-                        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                    </a>
-                </div>
+                <a href="https://www.facebook.com/PugadPOD/" class="fb-link" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                </a>
             </div>
             <div class="footer-bottom">
                 <div>© 2025 PugadPOD. All rights reserved.</div>
-                <div>🇵🇭 Designed for Philippine sellers. Built with local partners.</div>
+                <div>🇵🇭 Designed for Philippine sellers.</div>
             </div>
         </div>
     </footer>
@@ -426,14 +434,12 @@
         const surveyCont = document.getElementById('survey-panel');
         const errorBox = document.getElementById('mce-error-response');
 
-        // This function executes when Mailchimp answers
         window.mailchimpCallback = function(data) {
             if (data.result === 'success') {
                 surveyCont.style.display = 'block';
                 signupCont.style.display = 'none';
                 surveyCont.scrollIntoView({ behavior: 'smooth', block: 'center' });
             } else {
-                // If there is an error (e.g. email already subscribed)
                 submitBtn.disabled = false;
                 submitBtn.value = "Notify me";
                 errorBox.style.display = 'block';
@@ -444,22 +450,16 @@
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             const email = document.getElementById('mce-EMAIL').value;
-            
             if (!email.includes('@')) return;
 
             submitBtn.disabled = true;
             submitBtn.value = "Sending...";
 
-            // Construct the JSONP URL
-            // We use 'post-json' instead of 'post' and add a callback parameter
             const url = "https://pugadpod.us11.list-manage.com/subscribe/post-json?u=ffa4d13140e8df6cff33aab65&id=328d609f7b&f_id=00ccd8e0f0&c=mailchimpCallback&EMAIL=" + encodeURIComponent(email) + "&tags=8130349";
 
-            // Create a temporary script element to perform the cross-origin request
             const script = document.createElement('script');
             script.src = url;
             document.head.appendChild(script);
-            
-            // Clean up the script tag after it runs
             script.onload = () => document.head.removeChild(script);
         });
     </script>
