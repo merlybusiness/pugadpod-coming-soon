@@ -12,8 +12,8 @@
             --gray-100: #f3f4f6;
             --gray-200: #e5e7eb;
             --gray-400: #9ca3af;
-            --gray-500: #6b7280;
             --gray-50: #F9FAFB;
+            --gray-500: #6b7280;
             --success-bg: #223a41; 
             --success-border: #2e4d56;
         }
@@ -124,7 +124,7 @@
             border-radius: 8px;
             color: white;
             outline: none;
-            font-size: 16px; /* Prevents iOS auto-zoom */
+            font-size: 16px; 
         }
         .mc-form-row input[type="submit"] {
             background-color: var(--gold);
@@ -173,24 +173,47 @@
         }
         .survey-helper { display: block; color: rgba(255,255,255,0.4); font-size: 11px; }
 
-        /* SECTIONS */
-        section { padding: 60px 0; }
+        /* NEW SECTION STYLES FROM SCREENSHOT */
+        .section-header-centered { text-align: center; margin-bottom: 60px; }
+        .section-header-centered h2 { font-size: 32px; font-weight: 800; color: var(--navy); margin-bottom: 12px; }
+        .section-header-centered p { color: var(--gray-500); font-size: 18px; max-width: 700px; margin: 0 auto; }
+
+        .how-works-grid { display: grid; grid-template-columns: 1fr; gap: 40px; text-align: center; margin-bottom: 20px; }
+        .how-item { padding: 0 10px; }
+        .how-icon { margin-bottom: 24px; display: inline-block; color: var(--navy); }
+        .how-title { font-size: 18px; font-weight: 800; margin-bottom: 12px; color: var(--navy); }
+        .how-desc { font-size: 14px; color: var(--gray-500); line-height: 1.6; }
+
+        /* Catalog specific from screenshot */
+        .cat-top-bar { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px; border-bottom: 1px solid var(--gray-200); padding-bottom: 20px; }
+        .cat-header-left h2 { font-size: 32px; font-weight: 800; margin-bottom: 8px; }
+        .gold-line { width: 60px; height: 4px; background: var(--gold); display: block; }
+        .cat-header-left p { font-size: 14px; color: var(--gray-500); margin-top: 12px; }
+        .view-link { font-size: 14px; font-weight: 700; color: var(--navy); text-decoration: none; padding-bottom: 2px; }
+
+        .new-cat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .new-cat-card { background: white; border: 1px solid var(--gray-200); border-radius: 12px; padding: 12px; text-align: center; position: relative; }
+        .new-cat-img { background: var(--gray-50); border-radius: 8px; aspect-ratio: 1; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; }
+        .new-cat-img img { width: 100%; height: 100%; object-fit: contain; }
+        .new-cat-card h4 { font-size: 14px; font-weight: 800; }
+        
+        .tag-badge { position: absolute; top: 20px; right: 20px; font-size: 10px; font-weight: 900; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; }
+        .tag-best { background: var(--gold); color: var(--navy); }
+        .tag-low { background: var(--navy); color: white; }
+        .new-cat-footer { text-align: center; margin-top: 40px; color: var(--gray-400); font-size: 13px; }
+
+        /* ORIGINAL SECTION STYLES */
+        section { padding: 80px 0; }
         .bg-gray { background-color: #F9FAFB; }
         h2.sec-title { font-size: 28px; font-weight: 800; text-align: center; margin-bottom: 40px; color: var(--navy); padding: 0 10px; }
 
-        /* Built For Sellers */
-        .aud-grid { 
-            display: grid; 
-            grid-template-columns: 1fr; 
-            gap: 16px; 
-        }
+        .aud-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
         .aud-card { background: white; border: 1px solid var(--gray-200); padding: 24px; border-radius: 16px; }
         .aud-card svg { stroke: var(--gold) !important; }
         .aud-card .icon { margin-bottom: 16px; display: block; }
         .aud-card h3 { font-size: 18px; margin-bottom: 8px; }
         .aud-card p { font-size: 14px; color: var(--gray-500); line-height: 1.5; }
 
-        /* Comparison Section */
         .comp-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
         .comp-card { padding: 30px; border-radius: 20px; }
         .comp-card.light { background: white; border: 1px solid var(--gray-200); }
@@ -201,22 +224,13 @@
         .comp-list .x { color: var(--gray-400); font-weight: bold; }
         .comp-list .check { color: var(--gold); font-weight: bold; }
 
-        /* Catalogue */
-        .cat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-        .cat-card { background: white; border: 1px solid var(--gray-200); border-radius: 12px; padding: 12px; text-align: center; }
-        .cat-card img { width: 100%; aspect-ratio: 1; object-fit: contain; margin-bottom: 10px; background: var(--gray-50); border-radius: 8px; }
-        .cat-card h4 { font-size: 13px; font-weight: 700; }
-
-        /* Partner Content */
         .partner-box { text-align: center; max-width: 800px; margin: 0 auto; }
         .partner-box p { font-size: 18px; color: var(--gray-500); }
 
-        /* Final CTA */
         .cta-box { background: var(--navy); color: white; border-radius: 24px; padding: 60px 24px; text-align: center; border: 1px solid rgba(255,255,255,0.1); }
         .cta-box h2 { font-size: 32px; font-weight: 900; margin-bottom: 16px; line-height: 1.1; }
         .cta-box p { font-size: 18px; opacity: 0.7; }
 
-        /* FOOTER */
         footer { background-color: var(--navy); color: white; padding: 50px 0 25px; }
         .footer-top { margin-bottom: 40px; }
         .footer-desc { font-size: 14px; opacity: 0.5; max-width: 350px; line-height: 1.6; }
@@ -234,7 +248,6 @@
             text-align: center;
         }
 
-        /* DESKTOP RESPONSIVENESS */
         @media (min-width: 768px) {
             .hero { padding: 80px 0 120px; }
             .hero-grid { grid-template-columns: 1fr 1fr; gap: 60px; }
@@ -244,8 +257,9 @@
             .mc-form-row input[type="submit"] { width: auto; }
             #survey-btn { width: auto; }
 
+            .how-works-grid { grid-template-columns: repeat(4, 1fr); }
+            .new-cat-grid { grid-template-columns: repeat(3, 1fr); }
             .aud-grid { grid-template-columns: repeat(2, 1fr); }
-            .cat-grid { grid-template-columns: repeat(3, 1fr); }
             .comp-grid { grid-template-columns: 1fr 1fr; }
             
             h2.sec-title { font-size: 36px; }
@@ -254,7 +268,7 @@
 
         @media (min-width: 1024px) {
             .aud-grid { grid-template-columns: repeat(4, 1fr); }
-            .cat-grid { grid-template-columns: repeat(6, 1fr); }
+            .new-cat-grid { grid-template-columns: repeat(6, 1fr); }
             .hero-grid { grid-template-columns: 1fr 1.15fr; }
         }
     </style>
@@ -319,8 +333,103 @@
         </div>
     </div>
 
-    <!-- BUILT FOR SELLERS -->
+    <!-- HOW IT WORKS (NEW FROM SCREENSHOT) -->
+    <section>
+        <div class="container">
+            <div class="section-header-centered">
+                <h2>How PugadPOD Works</h2>
+                <p>From design to delivery, we handle the heavy lifting so you can focus on your brand.</p>
+            </div>
+            
+            <div class="how-works-grid">
+                <!-- 1. CREATE -->
+                <div class="how-item">
+                    <div class="how-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>
+                    </div>
+                    <h3 class="how-title">1. Create</h3>
+                    <p class="how-desc">Upload your designs to products like T-shirts, mugs, and more.</p>
+                </div>
+
+                <!-- 2. SELL -->
+                <div class="how-item">
+                    <div class="how-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12v0a2 2 0 0 1-2-2V7"/></svg>
+                    </div>
+                    <h3 class="how-title">2. Sell</h3>
+                    <p class="how-desc">Publish to Shopee, Lazada, TikTok Shop, Facebook Marketplace—or sell directly.</p>
+                </div>
+
+                <!-- 3. PRODUCTION -->
+                <div class="how-item">
+                    <div class="how-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+                    </div>
+                    <h3 class="how-title">3. Production</h3>
+                    <p class="how-desc">Orders are automatically routed to local production partners.</p>
+                </div>
+
+                <!-- 4. DELIVERY -->
+                <div class="how-item">
+                    <div class="how-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-1.39-1.74a1 1 0 0 0-.78-.37H14"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+                    </div>
+                    <h3 class="how-title">4. Delivery</h3>
+                    <p class="how-desc">We ship directly to your customer under your brand.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATALOGUE (NEW FROM SCREENSHOT) -->
     <section class="bg-gray">
+        <div class="container">
+            <div class="cat-top-bar">
+                <div class="cat-header-left">
+                    <h2>Our Catalogue</h2>
+                    <span class="gold-line"></span>
+                    <p>Start with best-selling essentials. More products coming soon.</p>
+                </div>
+                <a href="#" class="view-link">View all products &rarr;</a>
+            </div>
+
+            <div class="new-cat-grid">
+                <div class="new-cat-card">
+                    <span class="tag-badge tag-best">Best Seller</span>
+                    <div class="new-cat-img"><img src="assets/landing/catalog/tshirts.png" alt="T-Shirts"></div>
+                    <h4>T-Shirts</h4>
+                </div>
+                <div class="new-cat-card">
+                    <div class="new-cat-img"><img src="assets/landing/catalog/hoodies.png" alt="Hoodies"></div>
+                    <h4>Hoodies</h4>
+                </div>
+                <div class="new-cat-card">
+                    <div class="new-cat-img"><img src="assets/landing/catalog/tote-bags.png" alt="Tote Bags"></div>
+                    <h4>Tote Bags</h4>
+                </div>
+                <div class="new-cat-card">
+                    <div class="new-cat-img"><img src="assets/landing/catalog/mugs.png" alt="Mugs"></div>
+                    <h4>Mugs</h4>
+                </div>
+                <div class="new-cat-card">
+                    <span class="tag-badge tag-low">Low Cost</span>
+                    <div class="new-cat-img"><img src="assets/landing/catalog/stickers.png" alt="Stickers"></div>
+                    <h4>Stickers</h4>
+                </div>
+                <div class="new-cat-card">
+                    <div class="new-cat-img"><img src="assets/landing/catalog/posters.png" alt="Posters"></div>
+                    <h4>Posters</h4>
+                </div>
+            </div>
+
+            <div class="new-cat-footer">
+                New to print-on-demand? Start with T-Shirts or Stickers.
+            </div>
+        </div>
+    </section>
+
+    <!-- BUILT FOR SELLERS (ORIGINAL) -->
+    <section>
         <div class="container">
             <h2 class="sec-title">Built for Filipino sellers at every stage</h2>
             <div class="aud-grid">
@@ -352,22 +461,7 @@
         </div>
     </section>
 
-    <!-- CATALOGUE -->
-    <section>
-        <div class="container">
-            <h2 class="sec-title">Our Catalogue</h2>
-            <div class="cat-grid">
-                <div class="cat-card"><img src="assets/landing/catalog/tshirts.png" alt="T-Shirts"><h4>T-Shirts</h4></div>
-                <div class="cat-card"><img src="assets/landing/catalog/hoodies.png" alt="Hoodies"><h4>Hoodies</h4></div>
-                <div class="cat-card"><img src="assets/landing/catalog/tote-bags.png" alt="Tote Bags"><h4>Tote Bags</h4></div>
-                <div class="cat-card"><img src="assets/landing/catalog/mugs.png" alt="Mugs"><h4>Mugs</h4></div>
-                <div class="cat-card"><img src="assets/landing/catalog/stickers.png" alt="Stickers"><h4>Stickers</h4></div>
-                <div class="cat-card"><img src="assets/landing/catalog/posters.png" alt="Posters"><h4>Posters</h4></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- COMPARISON -->
+    <!-- COMPARISON (ORIGINAL) -->
     <section class="bg-gray">
         <div class="container">
             <div class="comp-grid">
@@ -391,7 +485,7 @@
         </div>
     </section>
 
-    <!-- PARTNER NETWORK -->
+    <!-- PARTNER NETWORK (ORIGINAL) -->
     <section>
         <div class="container partner-box">
             <h2 class="sec-title">A trusted local production network</h2>
@@ -399,7 +493,7 @@
         </div>
     </section>
 
-    <!-- FINAL CTA -->
+    <!-- FINAL CTA (ORIGINAL) -->
     <section class="bg-gray">
         <div class="container">
             <div class="cta-box">
@@ -410,7 +504,7 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (ORIGINAL) -->
     <footer>
         <div class="container">
             <div class="footer-top">
